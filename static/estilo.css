@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+/* RESETAR CSS */
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    margin: 0;
+}
+
+/* IMAGEM DO CABEÇALHO */
+.header{
+    width: 100%;
+    height:100vh;
+    /* background-image: url(https://p4.wallpaperbetter.com/wallpaper/1006/997/299/animals-snake-wallpaper-preview.jpg); */
+    background-image: url(../static/wallpaperbetter.com_2560x1080.jpg);
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;
+}
+/* MENU */
+.nav{
+    height:6.25rem;/* 100px */
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    width:8.75rem;/*140px*/
+    margin-left:1.25rem;/*20px*/
+    position: absolute;
+    top: 1rem;
+}
+
+.toggle {
+    width:2.75rem;/*140px*/
+    margin-right:1.25rem;/*20px*/
+    position: absolute;
+    top: 1.25rem;
+    right: 0px;
+}
+
+.bar-btn{
+    font-size:1.56rem;/* 25px */
+    color: #fff;
+    margin-right:1.25rem;
+    cursor: pointer
+}
+.nav-menu {
+    position:fixed;
+    width: 100%;
+    height:0vh;
+    top:6.25rem;
+    background: rgba(0, 0, 0, .95);
+    text-align:center;
+    transition:all .5s;
+}
+.nav-menu li {
+    display: none;
+    line-height: 1.87rem;
+    margin: 3.12rem 0;
+    transition: all .5s;
+}
+.nav-menu li a {
+    color: #fff;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.nav-menu li a.active, .nav-menu li a:hover {
+    color:#3359ec;
+    transition: .3s;
+}
+
+#check {
+    display:none;
+}
+
+#check:checked ~ .nav-menu { /* vou usar uma pseudoclasse pra ocultar o menu quando a pessoa apertar no menu */
+    height: 100vh;
+}
+
+#check:checked ~.nav-menu li {
+    display:block;
+}
+/* Fim do Menu retratil */
+/* Animais */
+.container {
+    margin: 2% 2% 0 3%;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+.animals img{
+    margin-right: 10%;
+    margin-bottom: 10%;
+    width: 230px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: -2px 2px 5px 0 #3359;
+    transition: 0.8s;
+}
+.animals img:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 19px 38px #3359, 0 15px 12px #3357;
+}
+/* Fim da sessão animais */
+.bloco{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.botao{
+    background-color: #3359ec;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    display: inline-block;
+    padding: 20px;
+    margin: 10px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.796);
+}
+
+.botao:hover{
+    background-color: #3359ec;
+    transition: 0.25s;
+}
+
+.tabela{
+    border: 1px solid #adadad;
+    border-spacing: 0;
+    margin: 0 50px 20px;
+    width: 100%;
+}
+
+.tabela tr:nth-child(even) td{
+    background-color: #3359ec;
+}
+
+.tabela td{
+    padding: 10px;
+}
+
+.tabela_header td{
+    font-weight: bold;
+}
+
+#imagemSingle{
+    max-height: 400px;
+}
+
+.form{
+    width: 600px;
+}
+
+.form_input{
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form_input label{
+    font-weight: bold;
+    padding-right: 10px;
+}
+
+.form_input input[type=text]{
+    width: 450px;
+    padding: 6px;
+    margin: 6px 0;
+    display: inline-block;
+    border-radius: 4px;
+    border: 1px solid #CCCCCC;
+    box-sizing: border-box;
+}
+
+.form_input input[type=submit]{
+    width: 100%;
+}
+
+.novo_id{
+    background: #3359ec;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 20px;
+}
+
+.sucesso{
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    border-radius: 4px;
+    color: #155724;
+    margin: 0 50px;
+}
+
+.removido{
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    border-radius: 4px;
+    color: #721c24;
+    margin: 0 50px;
+}
+
+.certeza{
+    font-size: 14px;
+}
