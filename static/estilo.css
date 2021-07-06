@@ -163,16 +163,16 @@ body {
 .botao{
     background-color: #3359ec;
     border: none;
-    border-radius: 10px;
+    border-radius: 0.62rem;
     color: white;
     display: inline-block;
-    padding: 20px;
-    margin: 10px;
-    font-size: 16px;
+    padding: 1.25rem;
+    margin: 0.62rem;
+    font-size: 1rem;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.796);
+    box-shadow: 0.18rem 0.18rem 0.62rem rgba(0, 0, 0, 0.796);
 }
 
 .botao:hover{
@@ -181,26 +181,33 @@ body {
 }
 
 .form{
-    width: 600px;
+    display: flex;
+    flex-direction: Column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-width: 100%;
 }
 
 .form_input{
+    width: 80%;
     align-items: center;
-    justify-content: space-between;
+
 }
 
 .form_input label{
     font-weight: bold;
-    padding-right: 10px;
+    width: 40%;
+    padding-right: 0.62rem;
 }
 
 .form_input input[type=text]{
-    width: 450px;
-    padding: 6px;
-    margin: 6px 0;
-    display: inline-block;
-    border-radius: 4px;
-    border: 1px solid #CCCCCC;
+    width: 60%;
+    padding: 0.37rem;
+    padding-left: 0.62rem;
+    margin: 0.40rem 0.40rem;
+    border-radius: 0.25rem;
+    border: 0.06rem solid #CCCCCC;
     box-sizing: border-box;
 }
 
@@ -210,29 +217,29 @@ body {
 
 .novo_id{
     background: #3359ec;
-    border-radius: 5px;
+    border-radius: 0.31rem;
     color: white;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: bold;
-    padding: 5px 20px;
+    padding: 0.31rem 1.25rem;
 }
 
 .sucesso{
     background-color: #d4edda;
     border-color: #c3e6cb;
-    border-radius: 4px;
+    border-radius: 0.25rem;
     color: #155724;
-    margin: 0 50px;
+    margin: 0 3.12rem;
 }
 
 .removido{
     background-color: #f8d7da;
     border-color: #f5c6cb;
-    border-radius: 4px;
+    border-radius: 0.25rem;
     color: #721c24;
-    margin: 0 50px;
+    margin: 0 3.12rem;
 }
 
 .certeza{
-    font-size: 14px;
+    font-size: 1rem;
 }
