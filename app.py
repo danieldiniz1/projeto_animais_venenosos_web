@@ -9,6 +9,7 @@ password = 'XvkMKgFaa1In_ZxwakcZSWNZb4A7PESS'
 host = 'batyr.db.elephantsql.com'
 database = 'bwuqslwc'
 
+
 app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://{user}:{password}@{host}/{database}'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = "a9dcd386-0568-409d-9123-5c8aff7a511d"
@@ -22,10 +23,10 @@ class animais(db.Model): #modelando a classe conforme o banco de dados
     imagemurl = db.Column(db.String(255), nullable=False)
     nivelperigo = db.Column(db.Integer)
 
-    def __init__(self, nomeanimal, imagemurl, nomecientifico, nivelperigo):
+    def __init__(self, nomeanimal, nomecientifico, imagemurl, nivelperigo):
         self.nomeanimal = nomeanimal
-        self.imagemarl = imagemurl
         self.nomecientifico = nomecientifico
+        self.imagemurl = imagemurl
         self.nivelperigo = nivelperigo
 
     
@@ -45,10 +46,10 @@ class animais(db.Model): #modelando a classe conforme o banco de dados
         db.session.add(self)
         db.session.commit()
 
-    def update(self, novo_nomeanimal, nova_imagemurl, nomecientifico1, nivelperigo1):
+    def update(self, novo_nomeanimal, nomecientifico1, nova_imagemurl, nivelperigo1):
         self.nomeanimal = novo_nomeanimal
-        self.imagemurl = nova_imagemurl
         self.nomecientifico = nomecientifico1
+        self.imagemurl = nova_imagemurl
         self.nivelperigo = nivelperigo1
 
         self.save()
@@ -59,13 +60,13 @@ class animais(db.Model): #modelando a classe conforme o banco de dados
 
 @app.route("/")
 def index():
-    total = animais.conta()
-    return render_template("index.html", total=total)
+    return render_template("index.html")
 
 @app.route("/read")
 def read_all():
+    total = animais.conta()
     registros = animais.read_all()
-    return render_template("read_all.html", registros=registros)
+    return render_template("read_all.html", registros=registros, total=total)
 
 @app.route("/read/<id_registro>")
 def read_id(id_registro):
@@ -77,7 +78,7 @@ def create():
     novo_id = False
     if request.method == 'POST':
         form = request.form
-        registro = animais(form['nomeanimal'], form['imagemurl'], form['nomecientifico'], form['nivelperigo']) # Verificar HTML se já está criado o FORM com nomeCient e nivelPerigo
+        registro = animais(form['nomeanimal'], form['nomecientifico'], form['imagemurl'], form['nivelperigo']) # Verificar HTML se já está criado o FORM com nomeCient e nivelPerigo
         registro.save()
         novo_id = registro.id
 
@@ -91,7 +92,7 @@ def update(id_registro):
 
     if request.method == 'POST':
         form = request.form
-        registro.update(form['nomeanimal'], form['imagemurl'], form['nomecientifico'], form['nivelperigo']) 
+        registro.update(form['nomeanimal'], form['nomecientifico'], form['imagemurl'], form['nivelperigo']) 
         sucesso = True
     return render_template('update.html', registro=registro, sucesso=sucesso)
 

@@ -9,6 +9,7 @@
     box-sizing: border-box;
 }
 
+/* FUNDO DO SITE */
 body {
     background: #000;
     font-family: "Montserrat", sans-serif;
@@ -34,6 +35,7 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+
 .logo {
     width:8.75rem;/*140px*/
     margin-left:1.25rem;/*20px*/
@@ -55,6 +57,7 @@ body {
     margin-right:1.25rem;
     cursor: pointer
 }
+
 .nav-menu {
     position:fixed;
     width: 100%;
@@ -64,18 +67,21 @@ body {
     text-align:center;
     transition:all .5s;
 }
+
 .nav-menu li {
     display: none;
     line-height: 1.87rem;
     margin: 3.12rem 0;
     transition: all .5s;
 }
+
 .nav-menu li a {
     color: #fff;
     font-size: 1rem;
     text-transform: uppercase;
     font-weight: 600;
 }
+
 .nav-menu li a.active, .nav-menu li a:hover {
     color:#3359ec;
     transition: .3s;
@@ -93,7 +99,8 @@ body {
     display:block;
 }
 /* Fim do Menu retratil */
-/* Animais */
+
+/* Cards Animais */
 .container {
     margin: 2% 2% 0 3%;
 }
@@ -108,6 +115,7 @@ body {
     margin-right: 10%;
     margin-bottom: 10%;
     width: 230px;
+    height: 200px;
     border-radius: 10px;
     cursor: pointer;
     box-shadow: -2px 2px 5px 0 #3359;
@@ -118,6 +126,34 @@ body {
     box-shadow: 0 19px 38px #3359, 0 15px 12px #3357;
 }
 /* Fim da sessão animais */
+
+/*read individual */
+
+.readtitulo{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.readimagem{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: left;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.readbotoes{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin-right: 2rem;
+}
+#imagemSingle{
+    max-height: 25rem;
+}
+/* Fim do read individual */
 .bloco{
     display: flex;
     justify-content: center;
@@ -142,29 +178,6 @@ body {
 .botao:hover{
     background-color: #3359ec;
     transition: 0.25s;
-}
-
-.tabela{
-    border: 1px solid #adadad;
-    border-spacing: 0;
-    margin: 0 50px 20px;
-    width: 100%;
-}
-
-.tabela tr:nth-child(even) td{
-    background-color: #3359ec;
-}
-
-.tabela td{
-    padding: 10px;
-}
-
-.tabela_header td{
-    font-weight: bold;
-}
-
-#imagemSingle{
-    max-height: 400px;
 }
 
 .form{
