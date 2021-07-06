@@ -8,8 +8,8 @@ CREATE TABLE animais(
 
 INSERT INTO animais (nomeAnimal,nomeCientifico,imagemUrl, nivelPerigo) 
 VALUES
-	('Água-viva-caixa-australiana','Cubozoa','https://www.sobiologia.com.br/figuras/Curiosidades/dez_animais_venenosos11.jpg',8)
-	('Cobra-real','Ophiophagus hannah','https://www.sobiologia.com.br/figuras/Curiosidades/dez_animais_venenosos10.jpg',7)
+	('Água-viva-caixa-australiana','Cubozoa','https://www.sobiologia.com.br/figuras/Curiosidades/dez_animais_venenosos11.jpg',8),
+	('Cobra-real','Ophiophagus hannah','https://www.sobiologia.com.br/figuras/Curiosidades/dez_animais_venenosos10.jpg',7),
 	('Polvo de anéis azuis','Hapalochlaena','https://www.sobiologia.com.br/figuras/Curiosidades/dez_animais_venenosos9.jpg', 6),
 	('Caracol de cone-de-mármore','Conus marmoreus','https://www.sobiologia.com.br/figuras/Curiosidades/dez_animais_venenosos8.jpg', 5),
 	('Peixe-pedra','Synanceia verrucosa','https://www.sobiologia.com.br/figuras/Curiosidades/dez_animais_venenosos7.jpg', 6),

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animais Peçonhentos</title>
+    <link rel="stylesheet" href="/static/estilo.css" />
+    <link rel="shortcut icon" href="../static/favicon.ico" />
+</head>
+<body>
+    {% include 'header.html' %}
+    
+    <div class="bloco">
+            <h2> Criar registros </h2>
+    </div>
+
+    {% if not novo_id %}
+
+    <div class="bloco">
+            <form class="form" method="POST">
+                <div class="bloco form_input">
+                    <label for="nomeanimal">Nome do animal: </label>
+                    <input type="text" id="nomeanimal" name="nomeanimal">
+                </div>
+
+                <div class="bloco form_input">
+                    <label for="imagemurl">: </label>
+                    <input type="text" id="nomeanimal" name="nomeanimal">
+                </div>
+
+                <div class="bloco form_input">
+                    <label for="imagemurl">URL da imagem: </label>
+                    <input type="text" id="imagemurl" name="imagemurl">
+                </div>
+                
+                <div class="bloco form_input">
+                    <input type="submit" class="botao" value="Enviar">
+                </div>
+                
+            </form>
+    </div>
+
+    {% else %}
+    {% endif %}
+
+    <div class="bloco">
+            <p>
+                Registro criado com sucesso!<br /><br />
+                O ID atribuído foi <span class="novo_id">{{ novo_id }}</span><br /><br />
+                <a href="/read/{{ novo_id }}" class="botao">Visualizar esse registro</a>
+            </p>
+    </div>
+
+    

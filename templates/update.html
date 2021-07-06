@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animais Peçonhentos</title>
+    <link rel="stylesheet" href="/static/estilo.css" />
+    <link rel="shortcut icon" href="../static/favicon.ico" />
+</head>
+<body>
+    {% include 'header.html' %}
+    
+    {% if not sucesso %}
+
+    <div class="bloco">
+        <h2> Editar registro <span class="novo_id">{{ registro.id }}</span> </h2>
+    </div>
+
+    <div class="bloco">
+        <form class="form" method="POST">
+            <div class="bloco form_input">
+                <label for="nomeanimal">nome animal: </label>
+                <input type="text" id="nomeanimal" name="nomeanimal" value="{{ registro.nomeanimal }}">
+            </div>
+
+            <div class="bloco form_input">
+                <label for="imagemurl">URL da imagem: </label>
+                <input type="text" id="imagemurl" name="imagemurl" value="{{ registro.imagemurl }}">
+            </div>
+            
+            <div class="bloco form_input">
+                <input type="submit" class="botao" value="Enviar">
+            </div>
+
+            <div class="bloco">
+                <a href="/read" class="botao">Voltar</a>
+            </div>
+            
+        </form>
+    </div>
+
+    {% else %}
+
+    <div class="bloco sucesso">
+        <p>
+            Registro editado com sucesso!
+        </p>
+    </div>
+
+    <div class="bloco">
+        <a href="/read/{{ registro.id }}" class="botao">Visualizar atualização</a>
+    </div>
+
+    {% endif %}
+
+</body>
+</html>
