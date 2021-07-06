@@ -25,13 +25,18 @@
                 </div>
 
                 <div class="bloco form_input">
-                    <label for="imagemurl">: </label>
-                    <input type="text" id="nomeanimal" name="nomeanimal">
+                    <label for="nomecientifico">Nome Científico: </label>
+                    <input type="text" id="nomecientifico" name="nomecientifico">
                 </div>
 
                 <div class="bloco form_input">
                     <label for="imagemurl">URL da imagem: </label>
                     <input type="text" id="imagemurl" name="imagemurl">
+                </div>
+
+                <div class="bloco form_input">
+                    <label for="nivelperigo">Nível de Perigo: </label>
+                    <input type="text" id="nivelperigo" name="nivelperigo">
                 </div>
                 
                 <div class="bloco form_input">
@@ -42,7 +47,7 @@
     </div>
 
     {% else %}
-    {% endif %}
+    
 
     <div class="bloco">
             <p>
@@ -51,5 +56,7 @@
                 <a href="/read/{{ novo_id }}" class="botao">Visualizar esse registro</a>
             </p>
     </div>
+
+    {% endif %}
 
     

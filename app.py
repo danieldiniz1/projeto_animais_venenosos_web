@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-# Alterar para as informações do banco de vcs
+# informações do BD
 user = 'bwuqslwc'
 password = 'XvkMKgFaa1In_ZxwakcZSWNZb4A7PESS'
 host = 'batyr.db.elephantsql.com'
@@ -15,24 +15,29 @@ app.secret_key = "a9dcd386-0568-409d-9123-5c8aff7a511d"
 
 db = SQLAlchemy(app)
 
-class animais(db.Model): #modelar a classe baseado na tabela animais
-    id = db.Column(db.Integer, primary_key=True)
+class animais(db.Model): #modelando a classe conforme o banco de dados
+    id = db.Column(db.Integer, primary_key=True) 
     nomeanimal = db.Column(db.String(255), nullable=False)
+    nomecientifico = db.Column(db.String(255),nullable=False)
     imagemurl = db.Column(db.String(255), nullable=False)
+    nivelperigo = db.Column(db.Integer)
 
-    def __init__(self, nomeanimal, imagemurl):
+    def __init__(self, nomeanimal, imagemurl, nomecientifico, nivelperigo):
         self.nomeanimal = nomeanimal
-        self.imagemurl = imagemurl
+        self.imagemarl = imagemurl
+        self.nomecientifico = nomecientifico
+        self.nivelperigo = nivelperigo
+
     
     @staticmethod
-    def read_all(): #aqui ele faz um query = select * 
+    def read_all(): #aqui ele faz um consulta SELECT * FROM animais
         return animais.query.order_by(animais.id.asc()).all()
 
     @staticmethod
-    def read_single(id_registro): #aqui é basicamente a pesquisa que fazemos no bando Select * from animais where id = x (esse x é o numero do id que ele vai buscar na url)
+    def read_single(id_registro): #aqui fazemos uma query : SELECT * FROM animais WHERE id = x (esse x é o numero do id que ele vai buscar na url)
         return animais.query.get(id_registro)
     
-    @staticmethod
+    @staticmethod 
     def conta(): 
         return animais.query.count()
     
@@ -40,9 +45,11 @@ class animais(db.Model): #modelar a classe baseado na tabela animais
         db.session.add(self)
         db.session.commit()
 
-    def update(self, novo_nomeanimal, nova_imagemurl):
+    def update(self, novo_nomeanimal, nova_imagemurl, nomecientifico1, nivelperigo1):
         self.nomeanimal = novo_nomeanimal
         self.imagemurl = nova_imagemurl
+        self.nomecientifico = nomecientifico1
+        self.nivelperigo = nivelperigo1
 
         self.save()
 
@@ -67,10 +74,10 @@ def read_id(id_registro):
 
 @app.route("/create", methods=('GET', 'POST'))
 def create():
-    novo_id = None
+    novo_id = False
     if request.method == 'POST':
         form = request.form
-        registro = animais(form['nomeanimal'], form['imagemurl']) # aqui ainda preciso acrescentar no form as outras linhas do banco
+        registro = animais(form['nomeanimal'], form['imagemurl'], form['nomecientifico'], form['nivelperigo']) # Verificar HTML se já está criado o FORM com nomeCient e nivelPerigo
         registro.save()
         novo_id = registro.id
 
@@ -84,7 +91,7 @@ def update(id_registro):
 
     if request.method == 'POST':
         form = request.form
-        registro.update(form['nomeanimal'], form['imagemurl']) 
+        registro.update(form['nomeanimal'], form['imagemurl'], form['nomecientifico'], form['nivelperigo']) 
         sucesso = True
     return render_template('update.html', registro=registro, sucesso=sucesso)
 
