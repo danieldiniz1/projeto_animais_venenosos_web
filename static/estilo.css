@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
-/* RESETAR CSS */
+/* RESETAR CSS para padronizar visualização em todos os navegadores */ 
 * {
     padding: 0;
     margin: 0;

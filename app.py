@@ -39,7 +39,7 @@ class animais(db.Model): #modelando a classe conforme o banco de dados
         return animais.query.get(id_registro)
     
     @staticmethod 
-    def conta(): 
+    def conta(): # Fazemos uma contagem com a query SELECT COUNT (*) FROM animais
         return animais.query.count()
     
     def save(self):
