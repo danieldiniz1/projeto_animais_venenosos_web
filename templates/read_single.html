@@ -11,16 +11,18 @@
 <body>
     {% include 'header.html' %}
     
-    <div class="bloco">
+    <div class="readtitulo">
         <h2> {{ registro.nomeanimal }}</h2>
     </div>
 
-    <div class="bloco">
+    <div class="readimagem">
         <img src="{{ registro.imagemurl }}" alt="{{ registro.nomeanimal }}" id="imagemSingle" />
     </div>
 
-    <div class="bloco">
+    <div class="readbotoes">
         <a href="/read" class="botao">Voltar</a>
+        <a href="/update/{{ registro['id'] }}" class="botao">Editar</a>
+        <a href="/delete/{{ registro['id'] }}" class="botao">Remover</a>
     </div>
 </body>
 </html>
