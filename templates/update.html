@@ -18,7 +18,7 @@
     </div>
 
     <div class="bloco">
-        <form class="form" method="POST" name="formulario">
+        <form class="form" method="POST" name="formulario" onsubmit="return validar(this);">
             <div class="bloco form_input">
                 <label for="nomeanimal">Nome do animal: </label>
                 <input type="text" id="nomeanimal" name="nomeanimal" value="{{ registro.nomeanimal }}">
@@ -40,10 +40,10 @@
             </div>
             
             <div class="bloco form_input">
-                <input type="submit" class="botao" onclick="validar()" value="Enviar" >
+                <input type="submit" class="botao" value="Enviar" >
             </div>
             
-            <script type="text/javascript" src="static/index.js"></script>
+            <script type="text/javascript" src="/static/index.js"></script>
 
             <div class="bloco">
                 <a href="/read" class="botao">Voltar</a>
