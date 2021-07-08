@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
+#integrantes do grupo: Daniel Diniz, Ícaro Fernando Lorena Goggin, Márcio Salú
 # informações do BD
 user = 'bwuqslwc'
 password = 'XvkMKgFaa1In_ZxwakcZSWNZb4A7PESS'
