@@ -113,5 +113,9 @@ def delete_confirmed(id_registro):
 
     return render_template("delete.html", registro=registro, sucesso=sucesso)
 
+@app.route("/contato")
+def contato():
+    return render_template("contato.html")
+
 if (__name__ == "__main__"):
     app.run(debug=True)

@@ -178,6 +178,8 @@ body {
 .botao:hover{
     background-color: #3359ec;
     transition: 0.25s;
+    transform: translateY(-2px);
+    box-shadow: 0 19px 38px #3359, 0 15px 12px #3357;
 }
 
 .form{
@@ -242,4 +244,55 @@ body {
 
 .certeza{
     font-size: 1rem;
+}
+
+.div-contato{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 3rem;
+    margin-top: 2rem;
+}
+.contato {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    background: rgba(0, 0, 0, .95);
+    margin-bottom: 3rem;
+}
+
+.infocontato{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 18rem;
+    border: 2px solid #3359ec;
+    padding: 3rem;
+    margin: 1.4rem;
+}
+
+.infocontato:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 19px 38px #3359, 0 15px 12px #3357;
+}
+
+.infocontato li{
+    margin-top: 0.5rem;
+}
+
+.icons{
+    width: 3rem;
+
+}
+.fotoperfil{
+    border-radius: 50%;
+    width: 6rem;
+}
+.links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
